@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Minloq — Singapore Accounting & Compliance AI</title>
+<meta name="description" content="Minloq is an AI-powered accounting and compliance platform for Singapore businesses and accounting firms. Minimal effort. Maximum compliance."/>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#fafaf8;
+  --surface:#ffffff;
+  --text:#111110;
+  --text2:#6b6b6b;
+  --text3:#b0b0a8;
+  --border:#e8e5e0;
+  --accent:#111110;
+  --gold:#b8862a;
+  --gold-light:#f5edd6;
+  --radius:10px;
+}
+
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 32px;height:60px;display:flex;align-items:center;justify-content:space-between;background:rgba(250,250,248,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.nav-logo-mark{width:28px;height:28px;background:var(--text);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;letter-spacing:-0.5px;font-family:'DM Mono',monospace;}
+.nav-logo-text{font-size:15px;font-weight:600;color:var(--text);}
+.nav-links{display:flex;align-items:center;gap:28px;}
+.nav-links a{font-size:14px;color:var(--text2);text-decoration:none;transition:color .15s;}
+.nav-links a:hover{color:var(--text);}
+.nav-cta{padding:8px 18px;background:var(--text);color:#fff;border-radius:99px;font-size:13.5px;font-weight:600;text-decoration:none;transition:opacity .15s;}
+.nav-cta:hover{opacity:.85;}
+.nav-mobile{display:none;background:none;border:none;cursor:pointer;font-size:20px;}
+@media(max-width:640px){
+  .nav-links{display:none;}
+  .nav-mobile{display:block;}
+}
+
+/* ── HERO ── */
+.hero{min-height:100vh;display:flex;align-items:center;padding:80px 32px 60px;position:relative;overflow:hidden;}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 50% 60% at 90% 10%, rgba(184,134,42,.07) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 50% at 5% 90%, rgba(184,134,42,.05) 0%, transparent 60%);
+  pointer-events:none;
+}
+.hero-grid{
+  display:grid;grid-template-columns:1fr;
+  max-width:720px;margin:0 auto;
+  position:relative;z-index:1;
+}
+.hero-label{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12px;font-weight:500;color:var(--gold);
+  letter-spacing:.8px;text-transform:uppercase;
+  margin-bottom:28px;
+}
+.hero-label span{width:20px;height:1px;background:var(--gold);}
+.hero-h1{
+  font-family:'Instrument Serif',serif;
+  font-size:clamp(48px,7vw,80px);
+  line-height:1.04;
+  color:var(--text);
+  letter-spacing:-.5px;
+  margin-bottom:24px;
+}
+.hero-h1 em{font-style:italic;color:var(--gold);}
+.hero-sub{
+  font-size:17px;color:var(--text2);
+  max-width:480px;line-height:1.75;
+  margin-bottom:40px;
+  font-weight:300;
+}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:56px;}
+.btn-primary{
+  padding:13px 28px;background:var(--text);color:#fff;
+  border-radius:99px;font-size:14px;font-weight:600;
+  text-decoration:none;transition:opacity .15s;
+  display:inline-flex;align-items:center;gap:8px;
+}
+.btn-primary:hover{opacity:.85;}
+.btn-secondary{
+  padding:13px 24px;background:transparent;color:var(--text);
+  border:1.5px solid var(--border);border-radius:99px;
+  font-size:14px;font-weight:500;text-decoration:none;
+  transition:all .15s;display:inline-flex;align-items:center;gap:8px;
+}
+.btn-secondary:hover{border-color:var(--text);}
+.hero-proof{
+  display:flex;flex-wrap:wrap;gap:20px;align-items:center;
+  font-size:12.5px;color:var(--text3);
+}
+.hero-proof-item{display:flex;align-items:center;gap:6px;}
+.hero-proof-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);}
+
+/* ── SECTION ── */
+section{padding:88px 32px;}
+.section-inner{max-width:1000px;margin:0 auto;}
+.section-label{
+  font-size:12px;font-weight:500;color:var(--gold);
+  letter-spacing:.8px;text-transform:uppercase;
+  margin-bottom:16px;display:flex;align-items:center;gap:8px;
+}
+.section-label span{width:20px;height:1px;background:var(--gold);}
+.section-h2{
+  font-family:'Instrument Serif',serif;
+  font-size:clamp(32px,4vw,48px);
+  line-height:1.12;color:var(--text);
+  letter-spacing:-.3px;margin-bottom:16px;
+}
+.section-sub{font-size:16px;color:var(--text2);max-width:480px;line-height:1.7;font-weight:300;}
+
+/* ── FEATURES (dark bg) ── */
+.features-bg{background:var(--text);}
+.features-bg .section-label{color:rgba(184,134,42,.8);}
+.features-bg .section-h2{color:#fff;}
+.features-bg .section-sub{color:rgba(255,255,255,.5);}
+
+.features-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+  gap:1px;background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:16px;overflow:hidden;
+  margin-top:48px;
+}
+.feature-card{
+  padding:28px 24px;background:var(--text);
+  transition:background .2s;
+}
+.feature-card:hover{background:#1a1a18;}
+.feature-icon{font-size:22px;margin-bottom:14px;}
+.feature-name{font-size:15px;font-weight:600;color:#fff;margin-bottom:8px;}
+.feature-desc{font-size:13.5px;color:rgba(255,255,255,.45);line-height:1.65;}
+.feature-tag{
+  margin-top:14px;font-size:11.5px;font-weight:500;
+  color:rgba(184,134,42,.7);
+  font-family:'DM Mono',monospace;
+}
+
+/* ── BOTS ── */
+.bots-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(180px,1fr));
+  gap:16px;margin-top:48px;
+}
+.bot-card{
+  padding:24px 20px;
+  border:1.5px solid var(--border);
+  border-radius:14px;
+  background:var(--surface);
+  transition:all .2s;
+}
+.bot-card:hover{border-color:var(--gold);box-shadow:0 4px 20px rgba(184,134,42,.08);}
+.bot-avatar{
+  width:40px;height:40px;border-radius:10px;
+  background:var(--gold-light);
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;margin-bottom:14px;
+}
+.bot-name{font-size:16px;font-weight:600;margin-bottom:4px;}
+.bot-role{font-size:13px;color:var(--text2);margin-bottom:10px;}
+.bot-badge{
+  display:inline-flex;padding:3px 10px;
+  background:var(--gold-light);color:var(--gold);
+  font-size:11px;font-weight:500;border-radius:99px;
+  font-family:'DM Mono',monospace;
+}
+.bot-badge.soon{background:#f0f0ee;color:var(--text3);}
+
+/* ── HOW IT WORKS ── */
+.steps{display:flex;flex-direction:column;gap:0;margin-top:48px;max-width:600px;}
+.step{
+  display:flex;gap:20px;padding:24px 0;
+  border-bottom:1px solid var(--border);
+  position:relative;
+}
+.step:last-child{border-bottom:none;}
+.step-num{
+  width:32px;height:32px;border-radius:50%;
+  background:var(--gold-light);
+  display:flex;align-items:center;justify-content:center;
+  font-size:13px;font-weight:700;color:var(--gold);
+  flex-shrink:0;margin-top:2px;
+  font-family:'DM Mono',monospace;
+}
+.step-title{font-size:15px;font-weight:600;margin-bottom:6px;}
+.step-desc{font-size:14px;color:var(--text2);line-height:1.65;}
+.step-tag{
+  display:inline-flex;margin-top:8px;
+  padding:3px 10px;background:var(--gold-light);
+  color:var(--gold);font-size:11.5px;font-weight:500;
+  border-radius:99px;
+}
+
+/* ── PRICING ── */
+.pricing-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:16px;margin-top:48px;
+}
+.price-card{
+  padding:28px 24px;border:1.5px solid var(--border);
+  border-radius:16px;background:var(--surface);
+  position:relative;transition:all .2s;
+}
+.price-card:hover{border-color:var(--gold);box-shadow:0 8px 32px rgba(184,134,42,.08);}
+.price-card.featured{border-color:var(--text);background:var(--text);color:#fff;}
+.price-badge{
+  position:absolute;top:-12px;left:24px;
+  padding:4px 12px;background:var(--gold);color:#fff;
+  font-size:11px;font-weight:600;border-radius:99px;
+  letter-spacing:.3px;
+}
+.price-tier{font-size:11.5px;font-weight:500;color:var(--gold);letter-spacing:.8px;text-transform:uppercase;font-family:'DM Mono',monospace;margin-bottom:8px;}
+.price-card.featured .price-tier{color:rgba(184,134,42,.8);}
+.price-name{font-size:18px;font-weight:600;margin-bottom:4px;}
+.price-card.featured .price-name{color:#fff;}
+.price-amount{
+  font-family:'Instrument Serif',serif;
+  font-size:38px;line-height:1;
+  margin-bottom:4px;
+}
+.price-card.featured .price-amount{color:#fff;}
+.price-period{font-size:13px;color:var(--text3);margin-bottom:20px;}
+.price-card.featured .price-period{color:rgba(255,255,255,.4);}
+.price-divider{height:1px;background:var(--border);margin-bottom:20px;}
+.price-card.featured .price-divider{background:rgba(255,255,255,.1);}
+.price-features{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.price-features li{font-size:13.5px;color:var(--text2);display:flex;gap:8px;align-items:flex-start;}
+.price-card.featured .price-features li{color:rgba(255,255,255,.6);}
+.price-features li::before{content:'✓';color:var(--gold);font-weight:600;flex-shrink:0;margin-top:1px;}
+.price-cta{
+  display:block;text-align:center;margin-top:24px;
+  padding:11px 20px;border-radius:99px;
+  font-size:14px;font-weight:600;text-decoration:none;
+  transition:all .15s;
+}
+.price-card:not(.featured) .price-cta{
+  background:var(--text);color:#fff;
+}
+.price-card:not(.featured) .price-cta:hover{opacity:.85;}
+.price-card.featured .price-cta{
+  background:#fff;color:var(--text);
+}
+.price-card.featured .price-cta:hover{opacity:.9;}
+.price-note{font-size:11.5px;color:var(--text3);text-align:center;margin-top:32px;}
+
+/* ── DIVIDER ── */
+.divider{height:1px;background:var(--border);max-width:1000px;margin:0 auto;}
+
+/* ── FAQ ── */
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 48px;margin-top:48px;}
+@media(max-width:700px){.faq-grid{grid-template-columns:1fr;}}
+.faq-item{border-bottom:1px solid var(--border);padding:20px 0;}
+.faq-q{
+  font-size:14.5px;font-weight:500;cursor:pointer;
+  display:flex;justify-content:space-between;align-items:center;gap:12px;
+  user-select:none;
+}
+.faq-q::after{content:'+';font-size:18px;color:var(--text3);flex-shrink:0;transition:transform .2s;}
+.faq-item.open .faq-q::after{transform:rotate(45deg);}
+.faq-a{
+  font-size:14px;color:var(--text2);line-height:1.75;
+  max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s;
+}
+.faq-item.open .faq-a{max-height:300px;padding-top:12px;}
+
+/* ── CONTACT ── */
+.contact-wrap{display:grid;grid-template-columns:1fr 1.4fr;gap:48px;margin-top:48px;}
+@media(max-width:700px){.contact-wrap{grid-template-columns:1fr;}}
+.contact-info{display:flex;flex-direction:column;gap:24px;}
+.contact-item{display:flex;gap:14px;align-items:flex-start;}
+.contact-icon{font-size:18px;margin-top:2px;}
+.contact-label{font-size:12px;color:var(--text3);text-transform:uppercase;letter-spacing:.6px;font-weight:500;margin-bottom:3px;}
+.contact-value{font-size:14.5px;color:var(--text);}
+.contact-form{display:flex;flex-direction:column;gap:12px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+@media(max-width:500px){.form-row{grid-template-columns:1fr;}}
+.form-input{
+  width:100%;padding:12px 16px;
+  border:1.5px solid var(--border);border-radius:10px;
+  font-family:'DM Sans',sans-serif;font-size:14px;
+  background:var(--surface);color:var(--text);
+  transition:border-color .15s;outline:none;
+}
+.form-input:focus{border-color:var(--text);}
+.form-select{appearance:none;cursor:pointer;}
+textarea.form-input{min-height:100px;resize:vertical;}
+.form-submit{
+  padding:13px 24px;background:var(--text);color:#fff;
+  border:none;border-radius:99px;font-size:14px;font-weight:600;
+  cursor:pointer;transition:opacity .15s;font-family:'DM Sans',sans-serif;
+}
+.form-submit:hover{opacity:.85;}
+
+/* ── PRIVACY ── */
+.privacy-section{background:#f5f4f1;border-top:1px solid var(--border);}
+.privacy-content{max-width:720px;}
+.privacy-content h3{font-size:16px;font-weight:600;margin:28px 0 10px;}
+.privacy-content h3:first-child{margin-top:0;}
+.privacy-content p{font-size:14px;color:var(--text2);line-height:1.8;margin-bottom:10px;}
+.privacy-content ul{padding-left:20px;margin-bottom:10px;}
+.privacy-content ul li{font-size:14px;color:var(--text2);line-height:1.8;}
+
+/* ── FOOTER ── */
+footer{
+  padding:28px 32px;border-top:1px solid var(--border);
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:16px;font-size:13px;color:var(--text3);
+}
+.footer-links{display:flex;gap:20px;}
+.footer-links a{color:var(--text3);text-decoration:none;transition:color .15s;}
+.footer-links a:hover{color:var(--text);}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .5s,transform .5s;}
+.reveal.visible{opacity:1;transform:none;}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">
+    <div class="nav-logo-mark">ML</div>
+    <span class="nav-logo-text">Minloq</span>
+  </a>
+  <div class="nav-links">
+    <a href="#features">Features</a>
+    <a href="#how">How it works</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+    <a href="https://maximax-platform.vercel.app/portal.html" class="nav-cta">Sign in →</a>
+  </div>
+  <button class="nav-mobile" onclick="toggleMobileMenu()">☰</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-label reveal"><span></span> Singapore AI Accounting Platform</div>
+    <h1 class="hero-h1 reveal">Minimal effort.<br/><em>Maximum compliance.</em></h1>
+    <p class="hero-sub reveal">Minloq gives Singapore businesses and accounting firms an AI team that handles bookkeeping, GST, payroll, corporate secretary and financial statements — so you can focus on your clients.</p>
+    <div class="hero-actions reveal">
+      <a href="#contact" class="btn-primary">Start free trial →</a>
+      <a href="#how" class="btn-secondary">See how it works</a>
+    </div>
+    <div class="hero-proof reveal">
+      <div class="hero-proof-item"><div class="hero-proof-dot"></div>Singapore-specific compliance built in</div>
+      <div class="hero-proof-item"><div class="hero-proof-dot"></div>IRAS · ACRA · CPF · MAS</div>
+      <div class="hero-proof-item"><div class="hero-proof-dot"></div>Data hosted in Singapore</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FEATURES -->
+<section class="features-bg" id="features">
+  <div class="section-inner">
+    <div class="section-label reveal"><span></span> What's included</div>
+    <h2 class="section-h2 reveal">Five AI specialists.<br/>One connected platform.</h2>
+    <p class="section-sub reveal">Most firms cobble together 5–6 separate tools with no intelligence between them. Minloq's bots talk to each other — so your data flows without you touching it.</p>
+
+    <div class="features-grid" style="margin-top:48px;">
+      <div class="feature-card">
+        <div class="feature-icon">📄</div>
+        <div class="feature-name">Ben — Bookkeeping</div>
+        <div class="feature-desc">Upload bank statements, invoices and receipts. Ben reads every Singapore bank format, categorises transactions and builds your review queue automatically.</div>
+        <div class="feature-tag">AVAILABLE NOW</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🧾</div>
+        <div class="feature-name">Gary — GST</div>
+        <div class="feature-desc">GST compliance advisor and F5 summary generator. FYE-aware quarters, Box 7 flagging and PDF export ready for myTax Portal submission.</div>
+        <div class="feature-tag">AVAILABLE NOW</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">💼</div>
+        <div class="feature-name">Maya — Payroll</div>
+        <div class="feature-desc">CPF calculations, SDL, payslip generation and IR8A preparation. Staff submit claims via WhatsApp. Maya reconciles and prepares the payroll run.</div>
+        <div class="feature-tag">AVAILABLE NOW</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🏛️</div>
+        <div class="feature-name">Lucy — Corporate Secretary</div>
+        <div class="feature-desc">Share issuance, director resolutions, AGM minutes and Annual Return guidance. ACRA deadline alerts and eSigning-ready documents.</div>
+        <div class="feature-tag">AVAILABLE NOW</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <div class="feature-name">Felix — Financial Statements</div>
+        <div class="feature-desc">SFRS-compliant financial statements prepared from Ben's data. P&L, Balance Sheet and Directors' Report — ready for review and filing.</div>
+        <div class="feature-tag">AVAILABLE NOW</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔗</div>
+        <div class="feature-name">Integration IS the product</div>
+        <div class="feature-desc">Ben's transactions feed Gary's GST return. Maya links payroll to Ben's ledger. Felix pulls from all four. No exports. No manual reconciliation between tools.</div>
+        <div class="feature-tag">MINLOQ DIFFERENCE</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="section-inner">
+    <div class="section-label reveal"><span></span> How it works</div>
+    <h2 class="section-h2 reveal">From document to compliance.<br/>In minutes, not days.</h2>
+    <p class="section-sub reveal">No complicated setup. No training required. Most clients are live within one business day.</p>
+
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-num">01</div>
+        <div>
+          <div class="step-title">Submit documents your way</div>
+          <div class="step-desc">Upload bank statements and documents via the portal. Staff submit expense receipts directly from their phones. Ben handles every Singapore bank format — PDF or CSV.</div>
+          <span class="step-tag">Portal · WhatsApp · Email</span>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">02</div>
+        <div>
+          <div class="step-title">Ben extracts and categorises</div>
+          <div class="step-desc">Ben reads every transaction, matches it to your chart of accounts and builds a review queue. Confidence scoring shows you exactly what needs attention and what can be approved in bulk.</div>
+          <span class="step-tag">AI extraction · Vendor memory · COA matching</span>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">03</div>
+        <div>
+          <div class="step-title">Review and approve in the portal</div>
+          <div class="step-desc">Your accountant reviews flagged items, corrects where needed and approves. Ben learns from every correction — so next month, fewer items need review.</div>
+          <span class="step-tag">Split-screen viewer · Bulk approve · Audit log</span>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">04</div>
+        <div>
+          <div class="step-title">Compliance outputs ready</div>
+          <div class="step-desc">Gary generates the GST F5 summary. Maya prepares payroll. Felix compiles financial statements. Lucy drafts resolutions. Everything linked — nothing re-entered.</div>
+          <span class="step-tag">GST · Payroll · FS · CorpSec</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="section-inner">
+    <div class="section-label reveal"><span></span> Pricing</div>
+    <h2 class="section-h2 reveal">Simple, transparent pricing.</h2>
+    <p class="section-sub reveal">All plans include a 14-day free trial. No credit card required. Founding firm discount available — ask us.</p>
+
+    <div class="pricing-grid">
+
+      <!-- SSME Basic -->
+      <div class="price-card reveal">
+        <div class="price-tier">SSME</div>
+        <div class="price-name">Basic</div>
+        <div class="price-amount">S$30</div>
+        <div class="price-period">per month</div>
+        <div class="price-divider"></div>
+        <ul class="price-features">
+          <li>Ben bookkeeping bot</li>
+          <li>50 messages / month</li>
+          <li>Portal document upload</li>
+          <li>1 company</li>
+          <li>Excel export</li>
+        </ul>
+        <a href="#contact" class="price-cta">Start free trial</a>
+      </div>
+
+      <!-- SSME Pro -->
+      <div class="price-card reveal">
+        <div class="price-tier">SSME</div>
+        <div class="price-name">Pro</div>
+        <div class="price-amount">S$50</div>
+        <div class="price-period">per month</div>
+        <div class="price-divider"></div>
+        <ul class="price-features">
+          <li>Ben + Gary bots</li>
+          <li>150 messages / month</li>
+          <li>GST F5 summary</li>
+          <li>1 company</li>
+          <li>Excel + PDF export</li>
+        </ul>
+        <a href="#contact" class="price-cta">Start free trial</a>
+      </div>
+
+      <!-- SME Basic -->
+      <div class="price-card reveal">
+        <div class="price-tier">SME</div>
+        <div class="price-name">Basic</div>
+        <div class="price-amount">S$100</div>
+        <div class="price-period">per month</div>
+        <div class="price-divider"></div>
+        <ul class="price-features">
+          <li>All 5 bots</li>
+          <li>500 messages / month</li>
+          <li>Expense claims module</li>
+          <li>1 company</li>
+          <li>Staff WhatsApp intake</li>
+        </ul>
+        <a href="#contact" class="price-cta">Start free trial</a>
+      </div>
+
+      <!-- SME Pro -->
+      <div class="price-card featured reveal">
+        <div class="price-badge">Most popular</div>
+        <div class="price-tier">SME</div>
+        <div class="price-name">Pro</div>
+        <div class="price-amount">S$199</div>
+        <div class="price-period">per month</div>
+        <div class="price-divider"></div>
+        <ul class="price-features">
+          <li>All 5 bots</li>
+          <li>Higher message cap</li>
+          <li>Priority support</li>
+          <li>1 company</li>
+          <li>Full feature access</li>
+        </ul>
+        <a href="#contact" class="price-cta">Start free trial</a>
+      </div>
+
+      <!-- Firm -->
+      <div class="price-card reveal">
+        <div class="price-tier">FIRM</div>
+        <div class="price-name">Firm</div>
+        <div class="price-amount">S$349</div>
+        <div class="price-period">per month</div>
+        <div class="price-divider"></div>
+        <ul class="price-features">
+          <li>All 5 bots</li>
+          <li>Up to 30 client companies</li>
+          <li>Xero / QuickBooks integration</li>
+          <li>Multi-client portal</li>
+          <li>3,000 messages / month</li>
+          <li>Unlimited staff submitters</li>
+        </ul>
+        <a href="#contact" class="price-cta">Start free trial</a>
+      </div>
+
+      <!-- Growth -->
+      <div class="price-card reveal">
+        <div class="price-tier">FIRM</div>
+        <div class="price-name">Growth</div>
+        <div class="price-amount">S$699</div>
+        <div class="price-period">per month</div>
+        <div class="price-divider"></div>
+        <ul class="price-features">
+          <li>Everything in Firm</li>
+          <li>Up to 100 client companies</li>
+          <li>5,000 messages / month</li>
+          <li>Priority support</li>
+          <li>Dedicated onboarding</li>
+        </ul>
+        <a href="#contact" class="price-cta">Start free trial</a>
+      </div>
+
+    </div>
+
+    <p class="price-note">Overage messages charged at S$0.08–0.10 per message depending on plan. All prices exclude GST.</p>
+
+    <p style="text-align:center;margin-top:20px;font-size:13px;color:var(--text3);">
+      💡 Qualifying expenditure on Minloq subscriptions may be eligible for the 400% tax deduction under Singapore's Enterprise Innovation Scheme (EIS). Speak to your tax advisor.
+    </p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="section-inner">
+    <div class="section-label reveal"><span></span> FAQ</div>
+    <h2 class="section-h2 reveal">Common questions.</h2>
+
+    <div class="faq-grid">
+      <div class="faq-col">
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFAQ(this)">Which Singapore banks does Ben support?</div>
+          <div class="faq-a">Ben reads PDF and CSV statements from DBS/POSB, OCBC, UOB, Maybank, Aspire, Wise and ANEXT. CSV export works for most other banks. Contact us if your bank isn't listed.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFAQ(this)">Do I need to set up Xero bank feeds?</div>
+          <div class="faq-a">No. Upload PDF or CSV bank statements directly via the portal. Xero integration is available on Firm and Growth plans for those who want it — but it's optional, not required.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFAQ(this)">Is the output audited or reviewed by Minloq?</div>
+          <div class="faq-a">No. All outputs are AI-assisted compilations prepared from information provided by management. No audit or review has been performed by Minloq. Management and their accountant remain responsible for accuracy. Every output carries a compilation notice.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFAQ(this)">Can multiple staff submit documents?</div>
+          <div class="faq-a">Yes. Register multiple staff numbers per company. Ben identifies who is submitting from their registered number and routes documents to the correct client queue automatically.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFAQ(this)">How does Minloq handle missing receipts?</div>
+          <div class="faq-a">Ben records what exists and flags what is missing — with clear notes rather than silent gaps. Clients are prompted to reconstruct or declare missing items. Ben knows Singapore documentation thresholds and guides accordingly.</div>
+        </div>
+      </div>
+
+      <div class="faq-col">
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFAQ(this)">What languages do the bots support?</div>
+          <div class="faq-a">All bots respond in the language you type — English, Mandarin, Bahasa Melayu, Tamil or Singlish. Regulatory references (IRAS, ACRA, CPF) remain in their official form.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFAQ(this)">Is my data secure and PDPA compliant?</div>
+          <div class="faq-a">Yes. All data is hosted in Singapore (AWS ap-southeast-1). Each subscriber's data is completely isolated using row-level security. Your data is never used to train AI models. Minloq is PDPA compliant.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFAQ(this)">Can I import my existing chart of accounts?</div>
+          <div class="faq-a">Yes. Import your COA via CSV from Xero, QuickBooks or any standard format. Ben learns your account mappings over time — the more you use it, the fewer manual corrections you need.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFAQ(this)">Is there a founding discount for accounting firms?</div>
+          <div class="faq-a">Yes — we have 10 founding firm slots at 50% off for the first 3 months. These are for firms willing to provide feedback during our early access period. Contact us to check availability.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFAQ(this)">What accounting software does Minloq work with?</div>
+          <div class="faq-a">Xero and QuickBooks Online on Firm and Growth plans. For SME and SSME plans, Ben generates a formatted Excel bookkeeping file. Standalone mode — no external accounting software needed.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-label reveal"><span></span> Get started</div>
+    <h2 class="section-h2 reveal">Start your free trial.</h2>
+    <p class="section-sub reveal">Tell us about your business and we'll get you set up — usually within one business day.</p>
+
+    <div class="contact-wrap">
+      <div class="contact-info reveal">
+        <div class="contact-item">
+          <div class="contact-icon">✉️</div>
+          <div>
+            <div class="contact-label">Email</div>
+            <div class="contact-value"><a href="mailto:hello@minloq.sg" style="color:var(--text);text-decoration:none;">hello@minloq.sg</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">💬</div>
+          <div>
+            <div class="contact-label">WhatsApp</div>
+            <div class="contact-value"><a href="https://wa.me/6586714878" style="color:var(--text);text-decoration:none;">+65 8671 4878</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div>
+            <div class="contact-label">Address</div>
+            <div class="contact-value">73 Ubi Road 1, #09-51<br/>Singapore 408733</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🏢</div>
+          <div>
+            <div class="contact-label">Legal entity</div>
+            <div class="contact-value">Minloq Pte. Ltd.<br/><span style="font-family:'DM Mono',monospace;font-size:13px;color:var(--text3);">UEN 202615062H</span></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🔒</div>
+          <div>
+            <div class="contact-label">Data</div>
+            <div class="contact-value" style="font-size:13.5px;color:var(--text2);">Hosted in Singapore · PDPA compliant · Never used to train AI</div>
+          </div>
+        </div>
+      </div>
+
+      <form class="contact-form reveal" onsubmit="submitForm(event)" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="form-row">
+          <input class="form-input" type="text" name="name" placeholder="Your name" required/>
+          <input class="form-input" type="email" name="email" placeholder="Email address" required/>
+        </div>
+        <input class="form-input" type="text" name="company" placeholder="Firm or company name"/>
+        <select class="form-input form-select" name="plan">
+          <option value="">Interested in...</option>
+          <option>SSME Basic — S$30/month</option>
+          <option>SSME Pro — S$50/month</option>
+          <option>SME Basic — S$100/month</option>
+          <option>SME Pro — S$199/month</option>
+          <option>Firm Plan — S$349/month</option>
+          <option>Growth Plan — S$699/month</option>
+          <option>Just exploring</option>
+        </select>
+        <textarea class="form-input" name="message" placeholder="Anything else? Number of clients, specific needs…"></textarea>
+        <button type="submit" class="form-submit">Send message →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PRIVACY POLICY -->
+<section class="privacy-section" id="privacy">
+  <div class="section-inner">
+    <div class="section-label"><span></span> Legal</div>
+    <h2 class="section-h2">Privacy Policy</h2>
+    <p style="font-size:13px;color:var(--text3);margin-bottom:32px;">Last updated: April 2026 · Minloq Pte. Ltd. (UEN 202615062H)</p>
+
+    <div class="privacy-content">
+      <h3>1. Who we are</h3>
+      <p>Minloq Pte. Ltd. (UEN 202615062H), 73 Ubi Road 1, #09-51, Singapore 408733, operates the Minloq platform accessible at minloq.sg. We are committed to protecting your personal data in accordance with the Personal Data Protection Act 2012 (PDPA) of Singapore.</p>
+
+      <h3>2. Data we collect</h3>
+      <p>We collect information you provide when signing up and using the platform, including your name, email address, company name and UEN, financial documents uploaded to the platform (bank statements, invoices, receipts), and usage data such as log files and session information.</p>
+
+      <h3>3. How we use your data</h3>
+      <p>Your data is used solely to provide the Minloq service — to process documents, generate compliance outputs and operate the platform. We do not sell your data to third parties. We do not use your data to train AI models.</p>
+
+      <h3>4. Data storage and security</h3>
+      <p>All data is stored in Singapore (AWS ap-southeast-1) in compliance with PDPA data residency principles. Each subscriber's data is isolated using row-level security. Access is restricted to authorised personnel only. Documents are stored in private, access-controlled storage.</p>
+
+      <h3>5. Data retention</h3>
+      <p>We retain your data for as long as your account is active or as required by Singapore law. You may request deletion of your account and associated data at any time by emailing <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4028252c2c2f002d292e2c2f316e3327">[email&#160;protected]</a>. We will process deletion requests within 30 days.</p>
+
+      <h3>6. Third-party processors</h3>
+      <p>We use the following third-party processors to operate the platform: Amazon Web Services (document processing and storage, Singapore region), Supabase (database, Singapore region), Vercel (application hosting). All processors are bound by appropriate data processing agreements.</p>
+
+      <h3>7. Your rights</h3>
+      <p>Under the PDPA, you have the right to access personal data we hold about you, correct inaccurate personal data, and withdraw consent for data processing (subject to legal or contractual restrictions). To exercise these rights, contact us at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="97fff2fbfbf8d7fafef9fbf8e6b9e4f0">[email&#160;protected]</a>.</p>
+
+      <h3>8. Cookies</h3>
+      <p>We use only essential cookies necessary to operate the platform (session management and authentication). We do not use tracking or advertising cookies.</p>
+
+      <h3>9. Changes to this policy</h3>
+      <p>We may update this policy from time to time. Material changes will be communicated to subscribers via email. Continued use of the platform after changes constitutes acceptance of the updated policy.</p>
+
+      <h3>10. Contact</h3>
+      <p>For any privacy-related queries or to exercise your rights, contact our Data Protection Officer at <a href="mailto:hello@minloq.sg" style="color:var(--text);">hello@minloq.sg</a>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-left">
+    <strong>Minloq Pte. Ltd.</strong> · UEN 202615062H · Singapore Accounting & Compliance AI<br/>
+    <span style="font-size:12px;">73 Ubi Road 1, #09-51, Singapore 408733 · <a href="mailto:hello@minloq.sg" style="color:var(--text3);text-decoration:none;">hello@minloq.sg</a></span>
+  </div>
+  <div class="footer-links">
+    <a href="mailto:hello@minloq.sg">Email us</a>
+    <a href="#privacy">Privacy Policy</a>
+    <a href="https://maximax-platform.vercel.app/portal.html">Sign in</a>
+  </div>
+</footer>
+
+<script>
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, {threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// FAQ toggle
+function toggleFAQ(el) {
+  const item = el.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+// Mobile menu
+function toggleMobileMenu() {
+  const links = document.q
