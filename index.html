@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Minloq — Singapore Accounting & Compliance AI</title>
 <meta name="description" content="Minloq is an AI-powered accounting and compliance platform for Singapore businesses and accounting firms. Minimal effort. Maximum compliance."/>
+<!-- Inline SVG favicon — matches the nav-logo-mark (black rounded square, "ML") — no binary asset needed -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%23111110'/><text x='32' y='43' font-family='ui-sans-serif,system-ui,sans-serif' font-size='26' font-weight='700' fill='%23ffffff' text-anchor='middle' letter-spacing='-1'>ML</text></svg>"/>
+<link rel="alternate icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A" />
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -41,6 +44,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 32px;height:60px;d
 @media(max-width:640px){
   .nav-links{display:none;}
   .nav-mobile{display:block;}
+  .nav-links.mobile-open{display:flex;flex-direction:column;align-items:flex-start;gap:14px;position:absolute;top:60px;left:0;right:0;padding:16px 24px;background:rgba(250,250,248,.98);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
 }
 
 /* ── HERO ── */
@@ -750,6 +754,33 @@ footer{
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-// Scroll reveal
-const observer = new IntersectionObserve
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script>
+// Global functions referenced by inline onclick handlers in the markup.
+// Must be declared at top level of a plain <script> (no DOMContentLoaded
+// wrapper, no module) so the browser can resolve them when the handler
+// fires. This is what the earlier "toggleFAQ is not defined" console
+// error was caused by — the previous trailing script block was truncated
+// before these definitions were emitted.
+
+function toggleFAQ(el) {
+  var item = el && el.closest ? el.closest('.faq-item') : null;
+  if (item) item.classList.toggle('open');
+}
+
+function toggleMobileMenu() {
+  var links = document.querySelector('.nav-links');
+  if (links) links.classList.toggle('mobile-open');
+}
+
+// Collapse the mobile menu after any link tap so the page doesn't remain
+// covered by the overlay after navigating to an anchor.
+document.querySelectorAll('.nav-links a').forEach(function(a) {
+  a.addEventListener('click', function() {
+    var links = document.querySelector('.nav-links');
+    if (links && links.classList.contains('mobile-open')) links.classList.remove('mobile-open');
+  });
+});
+</script>
+</body>
+</html>
