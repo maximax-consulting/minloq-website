@@ -26,6 +26,9 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);fon
 
 /* ── NAV ── */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 32px;height:60px;display:flex;align-items:center;justify-content:space-between;background:rgba(250,250,248,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+.compliance-banner{position:fixed;top:60px;left:0;right:0;z-index:99;background:#fff7cc;border-bottom:1px solid #f0d78b;color:#5c4510;font-size:12.5px;line-height:1.45;padding:8px 32px;text-align:center;}
+.compliance-banner strong{color:#3a2a00;}
+@media(max-width:700px){.compliance-banner{font-size:12px;padding:8px 16px;}}
 .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
 .nav-logo-mark{width:28px;height:28px;background:var(--text);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;letter-spacing:-0.5px;font-family:'DM Mono',monospace;}
 .nav-logo-text{font-size:15px;font-weight:600;color:var(--text);}
@@ -41,7 +44,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 32px;height:60px;d
 }
 
 /* ── HERO ── */
-.hero{min-height:100vh;display:flex;align-items:center;padding:80px 32px 60px;position:relative;overflow:hidden;}
+.hero{min-height:100vh;display:flex;align-items:center;padding:128px 32px 60px;position:relative;overflow:hidden;}
 .hero::before{
   content:'';position:absolute;inset:0;
   background:
@@ -340,6 +343,11 @@ footer{
   <button class="nav-mobile" onclick="toggleMobileMenu()">☰</button>
 </nav>
 
+<!-- COMPLIANCE BANNER — visible on every page section (homepage + pricing anchor). Matching banner lives in the client upload page. -->
+<div class="compliance-banner" role="note">
+  <strong>Ben extracts, you verify, you approve.</strong> Minloq is a productivity tool — your accountant remains responsible for all filings.
+</div>
+
 <!-- HERO -->
 <section class="hero">
   <div class="hero-grid">
@@ -421,33 +429,29 @@ footer{
       <div class="step reveal">
         <div class="step-num">01</div>
         <div>
-          <div class="step-title">Submit documents your way</div>
-          <div class="step-desc">Upload bank statements and documents via the portal. Staff submit expense receipts directly from their phones. Ben handles every Singapore bank format — PDF or CSV.</div>
-          <span class="step-tag">Portal · WhatsApp · Email</span>
+          <div class="step-title">Upload</div>
+          <div class="step-desc">Your team sends receipts via WhatsApp or you upload bank statements directly.</div>
         </div>
       </div>
       <div class="step reveal">
         <div class="step-num">02</div>
         <div>
-          <div class="step-title">Ben extracts and categorises</div>
-          <div class="step-desc">Ben reads every transaction, matches it to your chart of accounts and builds a review queue. Confidence scoring shows you exactly what needs attention and what can be approved in bulk.</div>
-          <span class="step-tag">AI extraction · Vendor memory · COA matching</span>
+          <div class="step-title">Ben reads</div>
+          <div class="step-desc">Ben extracts every transaction, invoice, and receipt automatically.</div>
         </div>
       </div>
       <div class="step reveal">
         <div class="step-num">03</div>
         <div>
-          <div class="step-title">Review and approve in the portal</div>
-          <div class="step-desc">Your accountant reviews flagged items, corrects where needed and approves. Ben learns from every correction — so next month, fewer items need review.</div>
-          <span class="step-tag">Split-screen viewer · Bulk approve · Audit log</span>
+          <div class="step-title">You verify</div>
+          <div class="step-desc">Review Ben's work in the portal. Correct anything that needs fixing.</div>
         </div>
       </div>
       <div class="step reveal">
         <div class="step-num">04</div>
         <div>
-          <div class="step-title">Compliance outputs ready</div>
-          <div class="step-desc">Gary generates the GST F5 summary. Maya prepares payroll. Felix compiles financial statements. Lucy drafts resolutions. Everything linked — nothing re-entered.</div>
-          <span class="step-tag">GST · Payroll · FS · CorpSec</span>
+          <div class="step-title">Books ready</div>
+          <div class="step-desc">Approve and your books are updated. GST, payroll and financials follow automatically.</div>
         </div>
       </div>
     </div>
@@ -461,75 +465,40 @@ footer{
   <div class="section-inner">
     <div class="section-label reveal"><span></span> Pricing</div>
     <h2 class="section-h2 reveal">Simple, transparent pricing.</h2>
-    <p class="section-sub reveal">All plans include a 14-day free trial. No credit card required. Founding firm discount available — ask us.</p>
+    <p class="section-sub reveal">All plans include a 14-day free trial. No credit card required.</p>
 
     <div class="pricing-grid">
 
-      <!-- SSME Basic -->
+      <!-- Solo -->
       <div class="price-card reveal">
-        <div class="price-tier">SSME</div>
-        <div class="price-name">Basic</div>
-        <div class="price-amount">S$30</div>
+        <div class="price-tier">SOLO</div>
+        <div class="price-name">Solo</div>
+        <div class="price-amount">S$49</div>
         <div class="price-period">per month</div>
         <div class="price-divider"></div>
         <ul class="price-features">
-          <li>Ben bookkeeping bot</li>
-          <li>50 messages / month</li>
-          <li>Portal document upload</li>
-          <li>1 company</li>
-          <li>Excel export</li>
+          <li>For self-employed and micro-businesses (0–2 staff)</li>
+          <li>Ben (bookkeeping) + Maya (payroll)</li>
+          <li>Portal access only</li>
+          <li>14-day free trial, no credit card required</li>
         </ul>
         <a href="#contact" class="price-cta">Start free trial</a>
       </div>
 
-      <!-- SSME Pro -->
-      <div class="price-card reveal">
-        <div class="price-tier">SSME</div>
-        <div class="price-name">Pro</div>
-        <div class="price-amount">S$50</div>
-        <div class="price-period">per month</div>
-        <div class="price-divider"></div>
-        <ul class="price-features">
-          <li>Ben + Gary bots</li>
-          <li>150 messages / month</li>
-          <li>GST F5 summary</li>
-          <li>1 company</li>
-          <li>Excel + PDF export</li>
-        </ul>
-        <a href="#contact" class="price-cta">Start free trial</a>
-      </div>
-
-      <!-- SME Basic -->
-      <div class="price-card reveal">
-        <div class="price-tier">SME</div>
-        <div class="price-name">Basic</div>
-        <div class="price-amount">S$100</div>
-        <div class="price-period">per month</div>
-        <div class="price-divider"></div>
-        <ul class="price-features">
-          <li>All 5 bots</li>
-          <li>500 messages / month</li>
-          <li>Expense claims module</li>
-          <li>1 company</li>
-          <li>Staff WhatsApp intake</li>
-        </ul>
-        <a href="#contact" class="price-cta">Start free trial</a>
-      </div>
-
-      <!-- SME Pro -->
+      <!-- Business -->
       <div class="price-card featured reveal">
         <div class="price-badge">Most popular</div>
-        <div class="price-tier">SME</div>
-        <div class="price-name">Pro</div>
-        <div class="price-amount">S$199</div>
+        <div class="price-tier">BUSINESS</div>
+        <div class="price-name">Business</div>
+        <div class="price-amount">S$149</div>
         <div class="price-period">per month</div>
         <div class="price-divider"></div>
         <ul class="price-features">
-          <li>All 5 bots</li>
-          <li>Higher message cap</li>
-          <li>Priority support</li>
-          <li>1 company</li>
-          <li>Full feature access</li>
+          <li>For SMEs (3–20 staff)</li>
+          <li>All 5 bots: Ben, Gary, Maya, Lucy, Felix</li>
+          <li>WhatsApp intake for staff expense submissions</li>
+          <li>Portal access</li>
+          <li>14-day free trial, no credit card required</li>
         </ul>
         <a href="#contact" class="price-cta">Start free trial</a>
       </div>
@@ -542,36 +511,18 @@ footer{
         <div class="price-period">per month</div>
         <div class="price-divider"></div>
         <ul class="price-features">
-          <li>All 5 bots</li>
-          <li>Up to 30 client companies</li>
-          <li>Xero / QuickBooks integration</li>
-          <li>Multi-client portal</li>
-          <li>3,000 messages / month</li>
-          <li>Unlimited staff submitters</li>
-        </ul>
-        <a href="#contact" class="price-cta">Start free trial</a>
-      </div>
-
-      <!-- Growth -->
-      <div class="price-card reveal">
-        <div class="price-tier">FIRM</div>
-        <div class="price-name">Growth</div>
-        <div class="price-amount">S$699</div>
-        <div class="price-period">per month</div>
-        <div class="price-divider"></div>
-        <ul class="price-features">
-          <li>Everything in Firm</li>
-          <li>Up to 100 client companies</li>
-          <li>5,000 messages / month</li>
-          <li>Priority support</li>
-          <li>Dedicated onboarding</li>
+          <li>For accounting firms</li>
+          <li>All 5 bots + Xero integration</li>
+          <li>Multi-client portal (up to 30 clients)</li>
+          <li>WhatsApp + email + portal intake</li>
+          <li><strong>50% off for first 3 months</strong> (10 founding slots only)</li>
         </ul>
         <a href="#contact" class="price-cta">Start free trial</a>
       </div>
 
     </div>
 
-    <p class="price-note">Overage messages charged at S$0.08–0.10 per message depending on plan. All prices exclude GST.</p>
+    <p class="price-note">All prices exclude GST.</p>
 
     <p style="text-align:center;margin-top:20px;font-size:13px;color:var(--text3);">
       💡 Qualifying expenditure on Minloq subscriptions may be eligible for the 400% tax deduction under Singapore's Enterprise Innovation Scheme (EIS). Speak to your tax advisor.
@@ -595,7 +546,7 @@ footer{
         </div>
         <div class="faq-item">
           <div class="faq-q" onclick="toggleFAQ(this)">Do I need to set up Xero bank feeds?</div>
-          <div class="faq-a">No. Upload PDF or CSV bank statements directly via the portal. Xero integration is available on Firm and Growth plans for those who want it — but it's optional, not required.</div>
+          <div class="faq-a">No. Upload PDF or CSV bank statements directly via the portal. Xero integration is available on the Firm plan for those who want it — but it's optional, not required.</div>
         </div>
         <div class="faq-item">
           <div class="faq-q" onclick="toggleFAQ(this)">Is the output audited or reviewed by Minloq?</div>
@@ -630,7 +581,7 @@ footer{
         </div>
         <div class="faq-item">
           <div class="faq-q" onclick="toggleFAQ(this)">What accounting software does Minloq work with?</div>
-          <div class="faq-a">Xero and QuickBooks Online on Firm and Growth plans. For SME and SSME plans, Ben generates a formatted Excel bookkeeping file. Standalone mode — no external accounting software needed.</div>
+          <div class="faq-a">Xero integration is available on the Firm plan. For Solo and Business plans, Ben generates a formatted Excel bookkeeping file. Standalone mode — no external accounting software needed.</div>
         </div>
       </div>
     </div>
@@ -693,12 +644,9 @@ footer{
         <input class="form-input" type="text" name="company" placeholder="Firm or company name"/>
         <select class="form-input form-select" name="plan">
           <option value="">Interested in...</option>
-          <option>SSME Basic — S$30/month</option>
-          <option>SSME Pro — S$50/month</option>
-          <option>SME Basic — S$100/month</option>
-          <option>SME Pro — S$199/month</option>
-          <option>Firm Plan — S$349/month</option>
-          <option>Growth Plan — S$699/month</option>
+          <option>Solo — S$49/month</option>
+          <option>Business — S$149/month</option>
+          <option>Firm — S$349/month</option>
           <option>Just exploring</option>
         </select>
         <textarea class="form-input" name="message" placeholder="Anything else? Number of clients, specific needs…"></textarea>
@@ -753,6 +701,9 @@ footer{
 
 <!-- FOOTER -->
 <footer>
+  <div class="footer-disclaimer" style="width:100%;padding-bottom:16px;margin-bottom:16px;border-bottom:1px solid var(--border);font-size:12px;color:var(--text3);line-height:1.55;">
+    Minloq provides AI-assisted extraction as a productivity tool. Users are solely responsible for verifying extracted data before approval. Minloq does not provide accounting, legal or tax advice.
+  </div>
   <div class="footer-left">
     <strong>Minloq Pte. Ltd.</strong> · UEN 202615062H · Singapore Accounting & Compliance AI<br/>
     <span style="font-size:12px;">73 Ubi Road 1, #09-51, Singapore 408733 · <a href="/cdn-cgi/l/email-protection#046c6168686b44696d6a686b752a7763" style="color:var(--text3);text-decoration:none;"><span class="__cf_email__" data-cfemail="147c7178787b54797d7a787b653a6773">[email&#160;protected]</span></a></span>
