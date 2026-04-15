@@ -519,7 +519,7 @@ footer{
           <li>Portal access only</li>
           <li>14-day free trial, no credit card required</li>
         </ul>
-        <a href="#contact" class="price-cta">Try Ben Free for 14 Days</a>
+        <a href="#" data-plan="solo" class="price-cta" onclick="event.preventDefault();startCheckout('solo', this)">Try Ben Free for 14 Days</a>
       </div>
 
       <!-- Business -->
@@ -538,7 +538,7 @@ footer{
           <li>Portal access</li>
           <li>14-day free trial, no credit card required</li>
         </ul>
-        <a href="#contact" class="price-cta">Try Ben Free for 14 Days</a>
+        <a href="#" data-plan="business" class="price-cta" onclick="event.preventDefault();startCheckout('business', this)">Try Ben Free for 14 Days</a>
       </div>
 
       <!-- Firm -->
@@ -556,7 +556,7 @@ footer{
           <li>WhatsApp + email + portal intake</li>
           <li><strong>50% off for first 3 months</strong> (10 founding slots only)</li>
         </ul>
-        <a href="#contact" class="price-cta">Try Ben Free for 14 Days</a>
+        <a href="#" data-plan="firm" class="price-cta" onclick="event.preventDefault();startCheckout('firm', this)">Try Ben Free for 14 Days</a>
       </div>
 
     </div>
@@ -766,6 +766,29 @@ footer{
 function toggleFAQ(el) {
   var item = el && el.closest ? el.closest('.faq-item') : null;
   if (item) item.classList.toggle('open');
+}
+
+// The checkout endpoint lives on the platform repo (maximax-platform.vercel.app).
+// If you wire minloq.sg to a unified Vercel project later, flip this to
+// '/api/stripe-checkout' so it runs same-origin.
+var MINLOQ_CHECKOUT_URL = 'https://maximax-platform.vercel.app/api/stripe-checkout';
+
+async function startCheckout(plan, btn) {
+  var origLabel = btn ? btn.textContent : '';
+  if (btn) { btn.style.pointerEvents = 'none'; btn.textContent = 'Opening checkout\u2026'; }
+  try {
+    var resp = await fetch(MINLOQ_CHECKOUT_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ plan: plan }),
+    });
+    var data = await resp.json().catch(function() { return {}; });
+    if (!resp.ok || !data.url) throw new Error(data.error || ('HTTP ' + resp.status));
+    window.location.href = data.url;
+  } catch (err) {
+    if (btn) { btn.style.pointerEvents = ''; btn.textContent = origLabel; }
+    alert('Could not start checkout: ' + (err && err.message ? err.message : err) + '\n\nPlease contact sales.');
+  }
 }
 
 function toggleMobileMenu() {
