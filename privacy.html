@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Privacy Policy — Minloq</title>
+<meta name="description" content="Minloq Privacy Policy. How we collect, use, store and protect your data under Singapore's PDPA."/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%23111110'/><text x='32' y='43' font-family='ui-sans-serif,system-ui,sans-serif' font-size='26' font-weight='700' fill='%23ffffff' text-anchor='middle' letter-spacing='-1'>ML</text></svg>"/>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#fafaf8;
+  --surface:#ffffff;
+  --text:#111110;
+  --text2:#6b6b6b;
+  --text3:#b0b0a8;
+  --border:#e8e5e0;
+  --accent:#111110;
+  --radius:10px;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+
+/* Nav — matches index.html */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 32px;height:60px;display:flex;align-items:center;justify-content:space-between;background:rgba(250,250,248,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.nav-logo-mark{width:28px;height:28px;background:var(--text);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;letter-spacing:-0.5px;font-family:'DM Mono',monospace;}
+.nav-logo-text{font-size:15px;font-weight:600;color:var(--text);}
+.nav-links{display:flex;align-items:center;gap:28px;}
+.nav-links a{font-size:14px;color:var(--text2);text-decoration:none;transition:color .15s;}
+.nav-links a:hover{color:var(--text);}
+.nav-cta{padding:8px 18px;background:var(--text);color:#fff;border-radius:99px;font-size:13.5px;font-weight:600;text-decoration:none;transition:opacity .15s;}
+.nav-cta:hover{opacity:.85;}
+.nav-mobile{display:none;background:none;border:none;cursor:pointer;font-size:20px;}
+@media(max-width:640px){
+  .nav-links{display:none;}
+  .nav-mobile{display:block;}
+  .nav-links.mobile-open{display:flex;flex-direction:column;align-items:flex-start;gap:14px;position:absolute;top:60px;left:0;right:0;padding:16px 24px;background:rgba(250,250,248,.98);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+}
+
+/* Content */
+.section-inner{max-width:960px;margin:0 auto;padding:0 24px;}
+.privacy-page{padding:100px 0 60px;}
+.section-label{font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--text3);display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+.section-label span{width:24px;height:1px;background:var(--text3);}
+.section-h2{font-family:'Instrument Serif',serif;font-size:clamp(28px,4vw,42px);font-weight:400;line-height:1.2;margin-bottom:8px;}
+.privacy-content{max-width:720px;}
+.privacy-content h3{font-size:16px;font-weight:600;margin:28px 0 10px;}
+.privacy-content h3:first-child{margin-top:0;}
+.privacy-content p{font-size:14px;color:var(--text2);line-height:1.8;margin-bottom:10px;}
+.privacy-content a{color:var(--text);text-decoration:underline;text-underline-offset:3px;}
+.privacy-content ul{padding-left:20px;margin-bottom:10px;}
+.privacy-content ul li{font-size:14px;color:var(--text2);line-height:1.8;}
+
+/* Footer — matches index.html */
+footer{padding:28px 32px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:13px;color:var(--text3);}
+.footer-links{display:flex;gap:20px;}
+.footer-links a{color:var(--text3);text-decoration:none;transition:color .15s;}
+.footer-links a:hover{color:var(--text);}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="/">
+    <div class="nav-logo-mark">ML</div>
+    <span class="nav-logo-text">Minloq</span>
+  </a>
+  <div class="nav-links">
+    <a href="/#features">Features</a>
+    <a href="/#how">How it works</a>
+    <a href="/#pricing">Pricing</a>
+    <a href="/#faq">FAQ</a>
+    <a href="https://maximax-platform.vercel.app/portal.html" class="nav-cta">Sign in →</a>
+  </div>
+  <button class="nav-mobile" onclick="toggleMobileMenu()">☰</button>
+</nav>
+
+<!-- PRIVACY POLICY -->
+<section class="privacy-page">
+  <div class="section-inner">
+    <div class="section-label"><span></span> Legal</div>
+    <h2 class="section-h2">Privacy Policy</h2>
+    <p style="font-size:13px;color:var(--text3);margin-bottom:32px;">Last updated: April 2026 · Minloq Pte. Ltd. (UEN 202615062H)</p>
+
+    <div class="privacy-content">
+      <h3>1. Who we are</h3>
+      <p>Minloq Pte. Ltd. (UEN 202615062H), 73 Ubi Road 1, #09-51, Singapore 408733, operates the Minloq platform accessible at minloq.sg. We are committed to protecting your personal data in accordance with the Personal Data Protection Act 2012 (PDPA) of Singapore.</p>
+
+      <h3>2. Data we collect</h3>
+      <p>We collect information you provide when signing up and using the platform, including your name, email address, company name and UEN, financial documents uploaded to the platform (bank statements, invoices, receipts), and usage data such as log files and session information.</p>
+
+      <h3>3. How we use your data</h3>
+      <p>Your data is used solely to provide the Minloq service — to process documents, generate compliance outputs and operate the platform. We do not sell your data to third parties. We do not use your data to train AI models.</p>
+
+      <h3>4. Data storage and security</h3>
+      <p>All data is stored in Singapore (AWS ap-southeast-1) in compliance with PDPA data residency principles. Each subscriber's data is isolated using row-level security. Access is restricted to authorised personnel only. Documents are stored in private, access-controlled storage.</p>
+
+      <h3>5. Data retention</h3>
+      <p>We retain your data for as long as your account is active or as required by Singapore law. You may request deletion of your account and associated data at any time by emailing <a href="mailto:hello@minloq.sg">hello@minloq.sg</a>. We will process deletion requests within 30 days.</p>
+
+      <h3>6. Third-party processors</h3>
+      <p>We use the following third-party processors to operate the platform: Amazon Web Services (document processing and storage, Singapore region), Supabase (database, Singapore region), Vercel (application hosting). All processors are bound by appropriate data processing agreements.</p>
+
+      <h3>7. Your rights</h3>
+      <p>Under the PDPA, you have the right to access personal data we hold about you, correct inaccurate personal data, and withdraw consent for data processing (subject to legal or contractual restrictions). To exercise these rights, contact us at <a href="mailto:hello@minloq.sg">hello@minloq.sg</a>.</p>
+
+      <h3>8. Cookies</h3>
+      <p>We use only essential cookies necessary to operate the platform (session management and authentication). We do not use tracking or advertising cookies.</p>
+
+      <h3>9. Changes to this policy</h3>
+      <p>We may update this policy from time to time. Material changes will be communicated to subscribers via email. Continued use of the platform after changes constitutes acceptance of the updated policy.</p>
+
+      <h3>10. Contact</h3>
+      <p>For any privacy-related queries or to exercise your rights, contact our Data Protection Officer at <a href="mailto:hello@minloq.sg">hello@minloq.sg</a>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-disclaimer" style="width:100%;padding-bottom:16px;margin-bottom:16px;border-bottom:1px solid var(--border);font-size:12px;color:var(--text3);line-height:1.55;">
+    Minloq provides AI-assisted extraction as a productivity tool. Users are solely responsible for verifying extracted data before approval. Minloq does not provide accounting, legal or tax advice.
+  </div>
+  <div class="footer-left">
+    <strong>Minloq Pte. Ltd.</strong> · UEN 202615062H · Singapore Accounting & Compliance AI<br/>
+    <span style="font-size:12px;">73 Ubi Road 1, #09-51, Singapore 408733 · <a href="mailto:hello@minloq.sg" style="color:var(--text3);text-decoration:none;">hello@minloq.sg</a></span>
+  </div>
+  <div class="footer-links">
+    <a href="mailto:hello@minloq.sg">Email us</a>
+    <a href="/privacy.html">Privacy Policy</a>
+    <a href="https://maximax-platform.vercel.app/portal.html">Sign in</a>
+  </div>
+</footer>
+
+<script>
+function toggleMobileMenu() {
+  var links = document.querySelector('.nav-links');
+  if (links) links.classList.toggle('mobile-open');
+}
+document.querySelectorAll('.nav-links a').forEach(function(a) {
+  a.addEventListener('click', function() {
+    var links = document.querySelector('.nav-links');
+    if (links && links.classList.contains('mobile-open')) links.classList.remove('mobile-open');
+  });
+});
+</script>
+</body>
+</html>
