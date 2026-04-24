@@ -500,10 +500,10 @@ footer{
 
     <div class="pricing-grid">
 
-      <!-- Solo -->
+      <!-- Starter (internal plan key: 'solo' — backend contract) -->
       <div class="price-card reveal">
-        <div class="price-tier">SOLO</div>
-        <div class="price-name">Solo</div>
+        <div class="price-tier">STARTER</div>
+        <div class="price-name">Starter</div>
         <div class="price-amount">S$49</div>
         <div class="price-period">per month</div>
         <div class="price-divider"></div>
@@ -540,7 +540,7 @@ footer{
       <div class="price-card reveal">
         <div class="price-tier">FIRM</div>
         <div class="price-name">Firm</div>
-        <div class="price-amount">S$349</div>
+        <div class="price-amount">S$599</div>
         <div class="price-period">per month</div>
         <div class="price-divider"></div>
         <ul class="price-features">
@@ -548,15 +548,33 @@ footer{
           <li>Ben — bookkeeping (live today) + Xero integration</li>
           <li>Gary — GST checker (live today)</li>
           <li>Multi-client portal (up to 30 clients)</li>
+          <li>200 pages/client/month · S$15/additional client</li>
           <li>WhatsApp + email + portal intake</li>
           <li><strong>50% off for first 3 months</strong> (10 founding slots only)</li>
         </ul>
         <a href="#" data-plan="firm" class="price-cta" onclick="event.preventDefault();startCheckout('firm', this)">Try Ben Free for 14 Days</a>
       </div>
 
+      <!-- Enterprise -->
+      <div class="price-card reveal">
+        <div class="price-tier">ENTERPRISE</div>
+        <div class="price-name">Enterprise</div>
+        <div class="price-amount" style="font-size:28px;line-height:1.3;">Custom pricing</div>
+        <div class="price-period">tailored to your scale</div>
+        <div class="price-divider"></div>
+        <ul class="price-features">
+          <li>Everything in Firm</li>
+          <li>Custom page limits</li>
+          <li>Custom client count</li>
+          <li>Dedicated support</li>
+          <li>SLA guarantee</li>
+        </ul>
+        <a href="#contact" class="price-cta">Contact us →</a>
+      </div>
+
     </div>
 
-    <p class="price-note">All prices exclude GST.</p>
+    <p class="price-note">All prices exclude GST. Plans include a monthly page allowance — S$0.10/page overage applies.</p>
 
     <p style="text-align:center;margin-top:20px;font-size:13px;color:var(--text3);">
       💡 Qualifying expenditure on Minloq subscriptions may be eligible for the 400% tax deduction under Singapore's Enterprise Innovation Scheme (EIS). Speak to your tax advisor.
@@ -615,7 +633,7 @@ footer{
         </div>
         <div class="faq-item">
           <div class="faq-q" onclick="toggleFAQ(this)">What accounting software does Minloq work with?</div>
-          <div class="faq-a">Xero integration is available on the Firm plan. For Solo and Business plans, Ben generates a formatted Excel bookkeeping file. Standalone mode — no external accounting software needed.</div>
+          <div class="faq-a">Xero integration is available on the Firm plan. For Starter and Business plans, Ben generates a formatted Excel bookkeeping file. Standalone mode — no external accounting software needed.</div>
         </div>
       </div>
     </div>
@@ -678,9 +696,10 @@ footer{
         <input class="form-input" type="text" name="company" placeholder="Firm or company name"/>
         <select class="form-input form-select" name="plan">
           <option value="">Interested in...</option>
-          <option>Solo — S$49/month</option>
+          <option>Starter — S$49/month</option>
           <option>Business — S$149/month</option>
-          <option>Firm — S$349/month</option>
+          <option>Firm — S$599/month</option>
+          <option>Enterprise — Custom pricing</option>
           <option>Just exploring</option>
         </select>
         <textarea class="form-input" name="message" placeholder="Anything else? Number of clients, specific needs…"></textarea>
