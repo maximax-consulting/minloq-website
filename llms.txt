@@ -1,0 +1,41 @@
+# Minloq
+
+> Minloq is an AI-powered accounting and compliance platform for Singapore
+> businesses and accounting firms, built by Minloq Pte Ltd, a Singapore
+> company. Two AI specialists — Ben (bookkeeping & document processing) and
+> Gary (GST checker) — prepare the books; a human accountant reviews and
+> approves everything before it posts. Minimal effort. Maximum compliance.
+
+Who it serves:
+- Self-employed, micro-businesses and SMEs in Singapore that want clean,
+  compliant books without admin overhead
+- Singapore accounting firms running multi-client practices
+
+Key facts:
+- Ben — bookkeeping: reads Singapore bank statements (PDF and CSV), extracts
+  every transaction, suggests account codes, and learns your vendors over
+  time. Intake via portal or WhatsApp. Every entry waits for your
+  accountant's approval before it posts.
+- Gary — GST checker: flags blocked input tax, reverse-charge issues and
+  GST F5 reconciliation gaps. Your accountant signs off the return.
+- Human-in-the-loop by design: AI prepares, you review, you approve.
+- Built and hosted in Singapore.
+
+Pricing (every plan includes a 14-day free trial, no credit card required):
+- Starter — S$49/month: self-employed & micro-businesses (0–2 staff)
+- Business — S$149/month: SMEs (3–20 staff), adds WhatsApp intake for staff
+  expense submissions
+- Firm — S$599/month: accounting firms, multi-client portal up to 30 clients
+  (S$15/additional client/month beyond 30), Xero integration, WhatsApp +
+  email + portal intake. 50% off first 3 months, 10 founding slots.
+- Enterprise — custom pricing: custom page limits, custom client count,
+  dedicated support, SLA.
+
+## Pages
+- [Home](https://www.minloq.sg/): product overview, the two AI specialists, pricing, FAQ
+- [Updates](https://www.minloq.sg/updates): product & Singapore compliance updates, newest first
+- [Privacy](https://www.minloq.sg/privacy): data handling and PDPA
+
+## Company
+- Minloq Pte Ltd (UEN 202615062H), Singapore
+- Contact: hello@minloq.sg
