@@ -2,6 +2,11 @@
   "rewrites": [
     { "source": "/privacy", "destination": "/privacy.html" },
     { "source": "/success", "destination": "/success.html" },
-    { "source": "/updates", "destination": "/updates.html" }
+    { "source": "/updates", "destination": "/updates.html" },
+    { "source": "/dpa", "destination": "/dpa.html" },
+    { "source": "/terms", "destination": "/terms.html" }
+  ],
+  "redirects": [
+    { "source": "/tos", "destination": "/terms", "permanent": true }
   ]
 }

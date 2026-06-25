@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Data Processing Agreement — Minloq</title>
+<meta name="description" content="Minloq Data Processing Agreement. How Minloq processes personal data as a data intermediary under Singapore's PDPA, including sub-processors and security measures."/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%23111110'/><text x='32' y='43' font-family='ui-sans-serif,system-ui,sans-serif' font-size='26' font-weight='700' fill='%23ffffff' text-anchor='middle' letter-spacing='-1'>ML</text></svg>"/>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#fafaf8;
+  --surface:#ffffff;
+  --text:#111110;
+  --text2:#6b6b6b;
+  --text3:#b0b0a8;
+  --border:#e8e5e0;
+  --accent:#111110;
+  --radius:10px;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+
+/* Nav — matches index.html */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 32px;height:60px;display:flex;align-items:center;justify-content:space-between;background:rgba(250,250,248,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.nav-logo-mark{width:28px;height:28px;background:var(--text);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;letter-spacing:-0.5px;font-family:'DM Mono',monospace;}
+.nav-logo-text{font-size:15px;font-weight:600;color:var(--text);}
+.nav-links{display:flex;align-items:center;gap:28px;}
+.nav-links a{font-size:14px;color:var(--text2);text-decoration:none;transition:color .15s;}
+.nav-links a:hover{color:var(--text);}
+.nav-cta{padding:8px 18px;background:var(--text);color:#fff;border-radius:99px;font-size:13.5px;font-weight:600;text-decoration:none;transition:opacity .15s;}
+.nav-cta:hover{opacity:.85;}
+.nav-mobile{display:none;background:none;border:none;cursor:pointer;font-size:20px;}
+@media(max-width:640px){
+  .nav-links{display:none;}
+  .nav-mobile{display:block;}
+  .nav-links.mobile-open{display:flex;flex-direction:column;align-items:flex-start;gap:14px;position:absolute;top:60px;left:0;right:0;padding:16px 24px;background:rgba(250,250,248,.98);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+}
+
+/* Content */
+.section-inner{max-width:960px;margin:0 auto;padding:0 24px;}
+.privacy-page{padding:100px 0 60px;}
+.section-label{font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--text3);display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+.section-label span{width:24px;height:1px;background:var(--text3);}
+.section-h2{font-family:'Instrument Serif',serif;font-size:clamp(28px,4vw,42px);font-weight:400;line-height:1.2;margin-bottom:8px;}
+.privacy-content{max-width:720px;}
+.privacy-content h3{font-size:16px;font-weight:600;margin:28px 0 10px;}
+.privacy-content h3:first-child{margin-top:0;}
+.privacy-content p{font-size:14px;color:var(--text2);line-height:1.8;margin-bottom:10px;}
+.privacy-content a{color:var(--text);text-decoration:underline;text-underline-offset:3px;}
+.privacy-content ul{padding-left:20px;margin-bottom:10px;}
+.privacy-content ul li{font-size:14px;color:var(--text2);line-height:1.8;}
+.privacy-content strong{color:var(--text);font-weight:600;}
+.privacy-content em{font-style:italic;}
+.privacy-content table{width:100%;border-collapse:collapse;margin:14px 0 18px;font-size:13px;}
+.privacy-content th,.privacy-content td{border:1px solid var(--border);padding:8px 10px;text-align:left;vertical-align:top;color:var(--text2);line-height:1.6;}
+.privacy-content th{font-weight:600;color:var(--text);background:var(--surface);}
+
+/* Footer — matches index.html */
+footer{padding:28px 32px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:13px;color:var(--text3);}
+.footer-links{display:flex;gap:20px;}
+.footer-links a{color:var(--text3);text-decoration:none;transition:color .15s;}
+.footer-links a:hover{color:var(--text);}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="/">
+    <div class="nav-logo-mark">ML</div>
+    <span class="nav-logo-text">Minloq</span>
+  </a>
+  <div class="nav-links">
+    <a href="/#features">Features</a>
+    <a href="/#how">How it works</a>
+    <a href="/#pricing">Pricing</a>
+    <a href="/#faq">FAQ</a>
+    <a href="https://maximax-platform.vercel.app/portal.html" class="nav-cta">Sign in →</a>
+  </div>
+  <button class="nav-mobile" onclick="toggleMobileMenu()">☰</button>
+</nav>
+
+<!-- DATA PROCESSING AGREEMENT -->
+<section class="privacy-page">
+  <div class="section-inner">
+    <div class="section-label"><span></span> Legal</div>
+    <h2 class="section-h2">Data Processing Agreement</h2>
+    <p style="font-size:13px;color:var(--text3);margin-bottom:32px;">Minloq Pte. Ltd. (Data Intermediary) and the Customer (Organisation) · Version 1.0 — effective 25 June 2026</p>
+
+    <div class="privacy-content">
+      <h3>1. Parties and roles</h3>
+      <p>1.1 This Agreement is between <strong>Minloq Pte. Ltd.</strong> (UEN 202615062H) ("Minloq") and the customer organisation that accepts it at onboarding ("Customer").</p>
+      <p>1.2 Under the Singapore Personal Data Protection Act 2012 ("PDPA"), the Customer is responsible for the personal data it submits to the platform. Minloq acts as a <strong>data intermediary</strong>, processing personal data only on the Customer's documented instructions, including those instructions inherent in the Customer's use of the platform.</p>
+
+      <h3>2. Scope and purpose</h3>
+      <p>2.1 Minloq processes personal data solely to provide its bookkeeping, GST, corporate-secretarial, payroll and financial-statement services to the Customer.</p>
+      <p>2.2 <strong>Data subjects</strong> include: the Customer's staff and authorised users; the Customer's customers and suppliers named in documents submitted to the platform; and individuals identified in know-your-client / customer due diligence (KYC/CDD) materials. <em>(Payroll-related data subjects are out of scope while the payroll service is not yet active; when activated, the same principles in this Agreement apply.)</em></p>
+      <p>2.3 <strong>Data categories</strong> include: names and contact details; identification numbers, including NRIC/FIN where collected for KYC/CDD; bank and payment details; and personal data incidentally contained in uploaded documents or messages.</p>
+      <p>2.4 <strong>NRIC/FIN handling.</strong> Where an NRIC or FIN is collected for KYC/CDD, it is stored in encrypted form, <strong>masked by default in the platform display</strong>, and may be unmasked only through controlled, access-restricted and logged actions. Minloq follows the PDPC's guidance on the collection and use of NRIC numbers.</p>
+
+      <h3>3. Customer obligations</h3>
+      <p>3.1 The Customer warrants that it has a lawful basis to submit the personal data and to authorise its processing by Minloq.</p>
+      <p>3.2 The Customer is responsible for the accuracy of the data it submits and for obtaining any consents required from data subjects.</p>
+
+      <h3>4. Minloq obligations</h3>
+      <p>4.1 Minloq processes personal data only on the Customer's documented instructions, including those inherent in platform use.</p>
+      <p>4.2 Minloq's personnel with access to personal data are bound by confidentiality obligations.</p>
+      <p>4.3 Minloq implements the security measures described in Schedule B.</p>
+      <p>4.4 <strong>No sale of data.</strong> Minloq does not sell the Customer's personal data.</p>
+      <p>4.5 <strong>No model training on Customer data.</strong> The Customer's personal data is not used to train third-party or foundation AI models; Minloq's AI processing is performed through providers (such as AWS Bedrock) whose terms do not use customer content to train their underlying models. Where Minloq improves suggestions based on the Customer's prior categorisations, that learning is applied <strong>within the Customer's own account</strong>.</p>
+
+      <h3>5. Sub-processors (Schedule A)</h3>
+      <p>5.1 The Customer authorises Minloq to engage the sub-processors listed in Schedule A. Minloq remains responsible for their compliance with this Agreement.</p>
+      <p>5.2 Minloq will give the Customer reasonable advance notice of the addition or replacement of a sub-processor and a reasonable period to object.</p>
+
+      <h3>6. International transfer</h3>
+      <p>6.1 Minloq's <strong>core data</strong> — the Customer's books, uploaded documents, and primary AI processing — is stored and processed in <strong>Singapore</strong> (Supabase Singapore region; Amazon Web Services ap-southeast-1).</p>
+      <p>6.2 Certain <strong>ancillary services</strong> are operated by established global providers that process limited data outside Singapore, and whose processing region the Customer and Minloq cannot select:</p>
+      <ul>
+        <li>Transactional email delivery (Resend);</li>
+        <li>Subscription billing — billing and contact data only, not the Customer's books (Stripe);</li>
+        <li>WhatsApp messaging transport for document intake (Meta Platforms).</li>
+      </ul>
+      <p>6.3 Where personal data is transferred outside Singapore through these ancillary services, Minloq relies on the transfer safeguards and data-protection terms offered by each provider. Core financial data is Singapore-resident; limited ancillary transport, billing and email data is handled by global providers under transfer safeguards.</p>
+
+      <h3>7. Data breach notification</h3>
+      <p>7.1 Minloq will notify the Customer without undue delay after becoming aware of a data breach affecting the Customer's data, and will provide the information the Customer reasonably needs to meet its own obligations under the PDPA's data-breach notification regime.</p>
+
+      <h3>8. Data subject rights</h3>
+      <p>8.1 Minloq will, where technically feasible, assist the Customer in responding to access and correction requests made by data subjects under the PDPA.</p>
+
+      <h3>9. Retention and deletion</h3>
+      <p>9.1 On termination, Minloq will make the Customer's data available for <strong>export in a commonly-used format</strong>, and will then <strong>delete or return</strong> the Customer's data within <strong>30 days</strong>, <strong>subject to any retention required by law</strong> (including statutory accounting and tax record-keeping obligations, which under IRAS guidance are generally five years and which may override a deletion request).</p>
+      <p>9.2 Minloq's platform uses a soft-delete model that preserves the audit trail and does not hard-delete accounting records. Deletion under this clause is effected by removal of access and soft-deletion, subject to the statutory retention in clause 9.1.</p>
+
+      <h3>10. Audit</h3>
+      <p>10.1 Minloq will make available the information reasonably necessary to demonstrate its compliance with this Agreement.</p>
+
+      <h3>11. Liability and term</h3>
+      <p>11.1 To the maximum extent permitted by Singapore law, Minloq's total aggregate liability arising out of or in connection with this Agreement is <strong>limited to the total fees paid by the Customer to Minloq in the twelve (12) months preceding the event giving rise to the claim</strong>.</p>
+      <p>11.2 To the maximum extent permitted by law, Minloq is not liable for indirect, incidental, special or consequential loss, or for loss of profits, revenue, goodwill or data.</p>
+      <p>11.3 Nothing in this Agreement excludes or limits liability that cannot be excluded or limited under Singapore law, including liability for fraud, fraudulent misrepresentation, or wilful misconduct, or any of Minloq's non-excludable statutory obligations as a data intermediary under the PDPA.</p>
+      <p>11.4 This Agreement applies for as long as Minloq processes personal data on the Customer's behalf and is read together with Minloq's Terms of Service.</p>
+
+      <h3>12. Governing law</h3>
+      <p>12.1 This Agreement is governed by the laws of Singapore, and the parties submit to the non-exclusive jurisdiction of the Singapore courts.</p>
+
+      <h3>13. Severability</h3>
+      <p>13.1 If any provision of this Agreement is held to be invalid or unenforceable, that provision is severed to the minimum extent necessary and the remaining provisions continue in full force and effect.</p>
+
+      <h3>14. Contact and Data Protection Officer</h3>
+      <p>14.1 Minloq's Data Protection Officer can be contacted at <a href="mailto:hello@minloq.sg">hello@minloq.sg</a> for questions about this Agreement or about how Minloq handles personal data.</p>
+
+      <h3>Schedule A — Sub-processors</h3>
+      <p><strong>Platform sub-processors</strong> (process the Customer's client / financial data):</p>
+      <table>
+        <thead><tr><th>Sub-processor</th><th>Purpose</th><th>Processing location</th></tr></thead>
+        <tbody>
+          <tr><td>Amazon Web Services</td><td>AI extraction (Bedrock), OCR (Textract)</td><td>Singapore (ap-southeast-1)</td></tr>
+          <tr><td>Supabase</td><td>Database and file storage</td><td>Singapore region</td></tr>
+          <tr><td>Meta Platforms</td><td>WhatsApp Cloud API — messaging intake</td><td>Outside Singapore</td></tr>
+          <tr><td>Resend</td><td>Transactional email</td><td>Outside Singapore</td></tr>
+          <tr><td>Stripe</td><td>Subscription billing (billing/contact data only, not the Customer's books)</td><td>Outside Singapore</td></tr>
+          <tr><td>Twilio</td><td>SMS one-time-passcode verification only (not WhatsApp)</td><td>Outside Singapore</td></tr>
+          <tr><td>Upstash</td><td>Rate-limiting metadata (tenant identifier / IP address); no document or financial content</td><td>Outside Singapore</td></tr>
+        </tbody>
+      </table>
+      <p><strong>Website sub-processor</strong> (processes prospect data at minloq.sg, not the Customer's books):</p>
+      <table>
+        <thead><tr><th>Sub-processor</th><th>Purpose</th><th>Processing location</th></tr></thead>
+        <tbody>
+          <tr><td>Formspree</td><td>Contact and signup form submissions</td><td>Outside Singapore</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Schedule B — Security measures</h3>
+      <ul>
+        <li>Tenant isolation via row-level security (RLS) on all data tables</li>
+        <li>Singapore data residency for core data (database, file storage, primary AI processing)</li>
+        <li>Encryption in transit (HTTPS / TLS)</li>
+        <li>Encryption at rest on the database and file storage</li>
+        <li>Multi-factor authentication available for portal access</li>
+        <li>Soft-delete model preserving the audit trail; no hard deletion of accounting records</li>
+        <li>Audit logging of document and data actions</li>
+        <li>Static analysis (SAST) in the development pipeline</li>
+      </ul>
+
+      <p style="margin-top:24px;"><em>Version 1.0 — effective 25 June 2026. Minloq Pte. Ltd. (UEN 202615062H), Singapore. Data Protection Officer: hello@minloq.sg.</em></p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-disclaimer" style="width:100%;padding-bottom:16px;margin-bottom:16px;border-bottom:1px solid var(--border);font-size:12px;color:var(--text3);line-height:1.55;">
+    Minloq provides AI-assisted extraction as a productivity tool. Users are solely responsible for verifying extracted data before approval. Minloq does not provide accounting, legal or tax advice.
+  </div>
+  <div class="footer-left">
+    <strong>Minloq Pte. Ltd.</strong> · UEN 202615062H · Singapore Accounting & Compliance AI<br/>
+    <span style="font-size:12px;">73 Ubi Road 1, #09-51, Singapore 408733 · <a href="mailto:hello@minloq.sg" style="color:var(--text3);text-decoration:none;">hello@minloq.sg</a></span>
+  </div>
+  <div class="footer-links">
+    <a href="mailto:hello@minloq.sg">Email us</a>
+    <a href="/privacy">Privacy Policy</a>
+    <a href="/terms">Terms</a>
+    <a href="https://maximax-platform.vercel.app/portal.html">Sign in</a>
+  </div>
+</footer>
+
+<script>
+function toggleMobileMenu() {
+  var links = document.querySelector('.nav-links');
+  if (links) links.classList.toggle('mobile-open');
+}
+document.querySelectorAll('.nav-links a').forEach(function(a) {
+  a.addEventListener('click', function() {
+    var links = document.querySelector('.nav-links');
+    if (links && links.classList.contains('mobile-open')) links.classList.remove('mobile-open');
+  });
+});
+</script>
+</body>
+</html>
