@@ -13,9 +13,9 @@
 Minloq platform and services ("Service"), operated by **Minloq Pte. Ltd.**
 (UEN 202615062H) ("Minloq", "we", "us").
 
-1.2 By accepting these Terms at onboarding, you agree to them. If you accept on
-behalf of an organisation, you confirm you are authorised to bind that
-organisation, and "you" refers to that organisation.
+1.2 By accepting these Terms at onboarding or by using the Service, you agree
+to them. If you accept on behalf of an organisation, you confirm you are
+authorised to bind that organisation, and "you" refers to that organisation.
 
 ## 2. The Service
 
