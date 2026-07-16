@@ -1,6 +1,6 @@
 # Privacy Policy
 
-**Version 2.0 — effective [EFFECTIVE DATE]** · Minloq Pte. Ltd. (UEN 202615062H)
+**Version 2.0 — effective 16 July 2026** · Minloq Pte. Ltd. (UEN 202615062H)
 *Supersedes the version last updated April 2026.*
 
 ### 1. Who we are

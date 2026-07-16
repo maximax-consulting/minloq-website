@@ -2,7 +2,7 @@
 
 **Minloq Pte. Ltd. (Data Intermediary) and the Customer (Organisation)**
 
-**Version 2.0 — effective [EFFECTIVE DATE]**
+**Version 2.0 — effective 16 July 2026**
 *Supersedes Version 1.0 (25 June 2026).*
 
 ---
@@ -241,5 +241,5 @@ Customer's books):
 
 ---
 
-*Version 2.0 — effective [EFFECTIVE DATE]. Minloq Pte. Ltd. (UEN 202615062H),
+*Version 2.0 — effective 16 July 2026. Minloq Pte. Ltd. (UEN 202615062H),
 Singapore. Data Protection Officer: hello@minloq.sg.*
