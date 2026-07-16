@@ -88,7 +88,7 @@ footer{padding:28px 32px;border-top:1px solid var(--border);display:flex;justify
   <div class="section-inner">
     <div class="section-label"><span></span> Legal</div>
     <h2 class="section-h2">Data Processing Agreement</h2>
-    <p style="font-size:13px;color:var(--text3);margin-bottom:32px;">Minloq Pte. Ltd. (Data Intermediary) and the Customer (Organisation) · Version 1.0 — effective 25 June 2026</p>
+    <p style="font-size:13px;color:var(--text3);margin-bottom:32px;">Minloq Pte. Ltd. (Data Intermediary) and the Customer (Organisation) · Version 2.0 — effective [EFFECTIVE DATE] · <em>Supersedes Version 1.0 (25 June 2026).</em></p>
 
     <div class="privacy-content">
       <h3>1. Parties and roles</h3>
@@ -96,14 +96,30 @@ footer{padding:28px 32px;border-top:1px solid var(--border);display:flex;justify
       <p>1.2 Under the Singapore Personal Data Protection Act 2012 ("PDPA"), the Customer is responsible for the personal data it submits to the platform. Minloq acts as a <strong>data intermediary</strong>, processing personal data only on the Customer's documented instructions, including those instructions inherent in the Customer's use of the platform.</p>
 
       <h3>2. Scope and purpose</h3>
-      <p>2.1 Minloq processes personal data solely to provide its bookkeeping, GST, corporate-secretarial, payroll and financial-statement services to the Customer.</p>
-      <p>2.2 <strong>Data subjects</strong> include: the Customer's staff and authorised users; the Customer's customers and suppliers named in documents submitted to the platform; and individuals identified in know-your-client / customer due diligence (KYC/CDD) materials. <em>(Payroll-related data subjects are out of scope while the payroll service is not yet active; when activated, the same principles in this Agreement apply.)</em></p>
-      <p>2.3 <strong>Data categories</strong> include: names and contact details; identification numbers, including NRIC/FIN where collected for KYC/CDD; bank and payment details; and personal data incidentally contained in uploaded documents or messages.</p>
-      <p>2.4 <strong>NRIC/FIN handling.</strong> Where an NRIC or FIN is collected for KYC/CDD, it is stored in encrypted form, <strong>masked by default in the platform display</strong>, and may be unmasked only through controlled, access-restricted and logged actions. Minloq follows the PDPC's guidance on the collection and use of NRIC numbers.</p>
+      <p>2.1 Minloq processes personal data solely to provide the services <strong>active on the Customer's plan</strong>, which may include bookkeeping, GST, corporate-secretarial and know-your-client (KYC/CDD), payroll, and financial-statement services.</p>
+      <p>2.2 <strong>Service activation.</strong> This Agreement describes the full scope of the Minloq platform. A service processes personal data only once it is <strong>active for the Customer</strong>. Services not yet released, or not included in the Customer's plan, process no personal data. Where a service is described below as <em>not yet active</em>, the corresponding data subjects and data categories are out of scope until activation, at which point the same principles in this Agreement apply.</p>
+      <p>2.3 <strong>Data subjects</strong>, by service:</p>
+      <table>
+        <thead><tr><th>Service</th><th>Data subjects</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>Bookkeeping / GST</td><td>The Customer's staff and authorised users; the Customer's customers and suppliers named in documents submitted to the platform</td><td><strong>Active</strong></td></tr>
+          <tr><td>Financial statements</td><td>As above</td><td><strong>Active</strong></td></tr>
+          <tr><td>Corporate-secretarial / KYC-CDD</td><td>Directors, shareholders, beneficial owners, and other individuals identified in due-diligence materials</td><td><strong>Not yet active</strong></td></tr>
+          <tr><td>Payroll</td><td>The Customer's employees</td><td><strong>Not yet active</strong></td></tr>
+        </tbody>
+      </table>
+      <p>2.4 <strong>Data categories</strong>, by service:</p>
+      <p>(a) <strong>Bookkeeping, GST and financial statements (active):</strong> names and contact details; bank and payment details; and personal data incidentally contained in uploaded documents or messages.</p>
+      <p>(b) <strong>Corporate-secretarial / KYC-CDD (not yet active):</strong> identification data including NRIC or FIN, passport number, nationality, country of birth, date of birth, gender and alias names; and the results of politically-exposed-person and sanctions screening.</p>
+      <p>(c) <strong>Payroll (not yet active):</strong> identification data including NRIC or FIN; salary and bank account details; immigration and work-pass status; and — <strong>only where required to calculate statutory contributions to Singapore self-help groups (CDAC, MBMF, SINDA and ECF)</strong> — the employee's ethnic group and, for MBMF, religious affiliation.</p>
+      <p>2.5 <strong>Sensitive data handling.</strong></p>
+      <p>(a) <strong>NRIC/FIN.</strong> The corporate-secretarial/KYC-CDD and payroll services are not yet active and no NRIC or FIN is currently stored. Before either service is activated for any Customer, NRIC and FIN data will be stored in encrypted form, masked by default in the platform display, and unmaskable only through controlled, access-restricted and logged actions. Minloq follows the PDPC's guidance on the collection and use of NRIC numbers.</p>
+      <p>(b) <strong>Ethnic group and religious affiliation.</strong> Where collected under clause 2.4(c), this data is used <strong>solely</strong> to calculate and report statutory self-help group contributions as required by Singapore law. It is not used for any other purpose, is not disclosed except as required for those statutory contributions, and is subject to the same encryption, masking and access controls as NRIC data. Employees may opt out of self-help group contributions in accordance with the relevant fund's rules.</p>
+      <p>(c) <strong>Screening results.</strong> Where collected under clause 2.4(b), screening results are proposals for a qualified professional to review and conclude. Minloq does not make or record a final risk determination on any individual.</p>
 
       <h3>3. Customer obligations</h3>
       <p>3.1 The Customer warrants that it has a lawful basis to submit the personal data and to authorise its processing by Minloq.</p>
-      <p>3.2 The Customer is responsible for the accuracy of the data it submits and for obtaining any consents required from data subjects.</p>
+      <p>3.2 The Customer is responsible for the accuracy of the data it submits and for obtaining any consents required from data subjects, including from its staff, customers, suppliers and employees.</p>
 
       <h3>4. Minloq obligations</h3>
       <p>4.1 Minloq processes personal data only on the Customer's documented instructions, including those inherent in platform use.</p>
@@ -122,9 +138,11 @@ footer{padding:28px 32px;border-top:1px solid var(--border);display:flex;justify
       <ul>
         <li>Transactional email delivery (Resend);</li>
         <li>Subscription billing — billing and contact data only, not the Customer's books (Stripe);</li>
-        <li>WhatsApp messaging transport for document intake (Meta Platforms).</li>
+        <li>WhatsApp messaging transport for document intake (Meta Platforms);</li>
+        <li>SMS one-time-passcode verification (Twilio);</li>
+        <li>Rate-limiting metadata (Upstash).</li>
       </ul>
-      <p>6.3 Where personal data is transferred outside Singapore through these ancillary services, Minloq relies on the transfer safeguards and data-protection terms offered by each provider. Core financial data is Singapore-resident; limited ancillary transport, billing and email data is handled by global providers under transfer safeguards.</p>
+      <p>6.3 Where personal data is transferred outside Singapore through these ancillary services, Minloq relies on the transfer safeguards and data-protection terms offered by each provider. Core financial data is Singapore-resident; limited ancillary transport, billing, verification and email data is handled by global providers under transfer safeguards.</p>
 
       <h3>7. Data breach notification</h3>
       <p>7.1 Minloq will notify the Customer without undue delay after becoming aware of a data breach affecting the Customer's data, and will provide the information the Customer reasonably needs to meet its own obligations under the PDPA's data-breach notification regime.</p>
@@ -161,6 +179,7 @@ footer{padding:28px 32px;border-top:1px solid var(--border);display:flex;justify
         <tbody>
           <tr><td>Amazon Web Services</td><td>AI extraction (Bedrock), OCR (Textract)</td><td>Singapore (ap-southeast-1)</td></tr>
           <tr><td>Supabase</td><td>Database and file storage</td><td>Singapore region</td></tr>
+          <tr><td>Vercel</td><td>Application hosting and serverless API routes</td><td>Serverless functions: Singapore (sin1); static assets served via global edge network</td></tr>
           <tr><td>Meta Platforms</td><td>WhatsApp Cloud API — messaging intake</td><td>Outside Singapore</td></tr>
           <tr><td>Resend</td><td>Transactional email</td><td>Outside Singapore</td></tr>
           <tr><td>Stripe</td><td>Subscription billing (billing/contact data only, not the Customer's books)</td><td>Outside Singapore</td></tr>
@@ -186,9 +205,10 @@ footer{padding:28px 32px;border-top:1px solid var(--border);display:flex;justify
         <li>Soft-delete model preserving the audit trail; no hard deletion of accounting records</li>
         <li>Audit logging of document and data actions</li>
         <li>Static analysis (SAST) in the development pipeline</li>
+        <li>Field-level encryption, default masking and logged unmasking for NRIC/FIN and payroll-sensitive data — to be in place before the corporate-secretarial/KYC-CDD and payroll services are activated (clause 2.5)</li>
       </ul>
 
-      <p style="margin-top:24px;"><em>Version 1.0 — effective 25 June 2026. Minloq Pte. Ltd. (UEN 202615062H), Singapore. Data Protection Officer: hello@minloq.sg.</em></p>
+      <p style="margin-top:24px;"><em>Version 2.0 — effective [EFFECTIVE DATE]. Minloq Pte. Ltd. (UEN 202615062H), Singapore. Data Protection Officer: hello@minloq.sg.</em></p>
     </div>
   </div>
 </section>
