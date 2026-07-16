@@ -4,7 +4,10 @@
     { "source": "/success", "destination": "/success.html" },
     { "source": "/updates", "destination": "/updates.html" },
     { "source": "/dpa", "destination": "/dpa.html" },
-    { "source": "/terms", "destination": "/terms.html" }
+    { "source": "/terms", "destination": "/terms.html" },
+    { "source": "/dpa/v1.0", "destination": "/dpa-v1.0.html" },
+    { "source": "/terms/v1.0", "destination": "/terms-v1.0.html" },
+    { "source": "/privacy/2026-04", "destination": "/privacy-2026-04.html" }
   ],
   "redirects": [
     { "source": "/tos", "destination": "/terms", "permanent": true }
