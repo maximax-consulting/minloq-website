@@ -1,0 +1,82 @@
+/* css/landing.css — Minloq landing design system.
+ *
+ * SINGLE SOURCE of the design tokens for the landing page (redesign, IBM Plex).
+ * Imported design: "Minloq Singapore compliance redesign".
+ * No per-surface token copies — every colour/rule references a variable below.
+ *
+ *   navy  --brand #12314F  = brand / primary (buttons, accents, links)
+ *   green --green #4F7E5C  = approval / verified states ONLY (never decorative)
+ *   base  --paper          = cool near-white surface
+ *   type  IBM Plex Serif (display) · Sans (body) · Mono (labels)
+ *   flat: no gradients, no glow — hairline borders + one soft shadow token.
+ *
+ * Maximax Consulting Pte. Ltd. | Minloq Pte. Ltd.
+ */
+
+:root {
+  /* Ink / neutrals */
+  --ink: #171A1F;
+  --ink-soft: #383D45;
+  --muted: #646A73;
+  --faint: #8A9099;
+  /* Surfaces / lines */
+  --paper: #F4F6F8;
+  --surface: #FFFFFF;
+  --line: #E4E7EC;
+  --line-2: #D3D8DF;
+  /* Neutral tints (the "awaiting / pending" grey family — NOT green) */
+  --neu-tint: #EDEFF3;
+  --neu-line: #DDE1E8;
+  --neu-deep: #565C66;
+  --neu-dot: #9AA1AC;
+  /* Approval / verified — GREEN, used only for confirmed states */
+  --green: #4F7E5C;
+  --green-tint: #EAF1EB;
+  /* Brand — navy */
+  --brand: #12314F;
+  --brand-deep: #0D2439;
+  --brand-tint: #E5EAF0;
+  /* One soft elevation token (flat design — used sparingly) */
+  --shadow-card: 0 1px 2px rgba(20,25,35,.05), 0 14px 36px rgba(20,25,35,.08);
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--brand); text-decoration: none; }
+
+/* ── Hover states (the imported design used non-standard style-hover attrs;
+ *    realised here as CSS. !important overrides the element's inline base so
+ *    the hover state actually applies). ─────────────────────────────────── */
+.mq-btn-primary:hover   { background: var(--brand-deep) !important; }
+.mq-btn-outline:hover   { border-color: var(--brand) !important; color: var(--brand) !important; }
+.mq-btn-white:hover     { background: rgba(255,255,255,.9) !important; }
+.mq-btn-ghost:hover     { border-color: #fff !important; }
+.mq-navlink:hover       { color: var(--ink) !important; }
+.mq-link:hover          { color: var(--brand-deep) !important; }
+.mq-flink:hover         { color: #fff !important; }
+
+/* ── FAQ accordion (native <details>) ─────────────────────────────────── */
+details.mq-faq > summary { list-style: none; cursor: pointer; }
+details.mq-faq > summary::-webkit-details-marker { display: none; }
+.mq-faq .mq-chev { transition: transform .2s; }
+.mq-faq[open] .mq-chev { transform: rotate(45deg); }
+
+/* ── Responsive: multi-column grids stack; centre nav hides on narrow. ─── */
+@media (max-width: 900px) {
+  .mq-cols { grid-template-columns: 1fr !important; }
+  .mq-nav-center { display: none !important; }
+  .mq-wrap { padding-left: 20px !important; padding-right: 20px !important; }
+  .mq-hero-h1 { font-size: 40px !important; }
+}
+@media (max-width: 560px) {
+  .mq-wrap { padding-left: 16px !important; padding-right: 16px !important; }
+  .mq-hero-h1 { font-size: 33px !important; }
+  .mq-nav-actions .mq-signin { display: none !important; }
+}
