@@ -39,7 +39,7 @@
         <a href="/updates" class="mq-navlink" style="color:var(--muted); font-size:14px;">Updates</a>
       </nav>
       <div class="mq-nav-actions" style="display:flex; align-items:center; gap:20px;">
-        <a href="https://maximax-platform.vercel.app/portal.html" class="mq-signin" style="color:var(--ink); font-size:14px; font-weight:500;">Sign in</a>
+        <a href="https://app.minloq.sg" class="mq-signin" style="color:var(--ink); font-size:14px; font-weight:500;">Sign in</a>
         <a href="#" class="mq-btn-primary" onclick="event.preventDefault();startCheckout('starter', this)" style="background:var(--brand); color:#fff; font-size:14px; font-weight:500; padding:9px 16px; border-radius:7px;">Try Ben Free</a>
       </div>
     </div>
@@ -432,10 +432,10 @@
   </footer>
 
 <script>
-// Checkout runs against the platform repo (maximax-platform.vercel.app). If
+// Checkout runs against the platform at app.minloq.sg. If
 // minloq.sg is later unified into one Vercel project, flip this to a same-origin
 // '/api/stripe-checkout'. (Carried verbatim from the previous landing.)
-var MINLOQ_CHECKOUT_URL = 'https://maximax-platform.vercel.app/api/stripe-checkout';
+var MINLOQ_CHECKOUT_URL = 'https://app.minloq.sg/api/stripe-checkout';
 
 async function startCheckout(plan, btn) {
   var origLabel = btn ? btn.textContent : '';
