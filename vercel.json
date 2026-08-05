@@ -4,6 +4,7 @@
     { "source": "/success", "destination": "/success.html" },
     { "source": "/updates", "destination": "/updates.html" },
     { "source": "/dpa", "destination": "/dpa.html" },
+    { "source": "/subprocessors", "destination": "/subprocessors.html" },
     { "source": "/terms", "destination": "/terms.html" },
     { "source": "/dpa/v1.0", "destination": "/dpa-v1.0.html" },
     { "source": "/terms/v1.0", "destination": "/terms-v1.0.html" },

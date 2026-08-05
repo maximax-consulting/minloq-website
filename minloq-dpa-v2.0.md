@@ -205,6 +205,11 @@ questions about this Agreement or about how Minloq handles personal data.
 
 ## Schedule A — Sub-processors
 
+*Schedule A is maintained as a living list under clause 5.2. The current
+list, with its change history, is published at minloq.sg/subprocessors (the
+canonical source; this Schedule renders it). Additions take effect per
+clause 5.2 notice and are never applied to an account retroactively.*
+
 **Platform sub-processors** (process the Customer's client / financial data):
 
 | Sub-processor | Purpose | Processing location |
@@ -213,10 +218,15 @@ questions about this Agreement or about how Minloq handles personal data.
 | Supabase | Database and file storage | Singapore region |
 | Vercel | Application hosting and serverless API routes | Serverless functions: Singapore (sin1); static assets served via global edge network |
 | Meta Platforms | WhatsApp Cloud API — messaging intake | Outside Singapore |
+| Telegram Messenger Inc. † | Telegram Bot API — document intake: photos and files sent to a connected Telegram group | Outside Singapore |
 | Resend | Transactional email | Outside Singapore |
 | Stripe | Subscription billing (billing/contact data only, not the Customer's books) | Outside Singapore |
 | Twilio | SMS one-time-passcode verification only (not WhatsApp) | Outside Singapore |
 | Upstash | Rate-limiting metadata (tenant identifier / IP address); no document or financial content | Outside Singapore |
+
+† Added August 2026 under clause 5.2 — off by default; active for an account
+only after that account consents or its notice period ends without objection.
+Change history: minloq.sg/subprocessors.
 
 **Website sub-processor** (processes prospect data at minloq.sg, not the
 Customer's books):
